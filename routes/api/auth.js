@@ -6,6 +6,10 @@ const { authenticate, upload } = require("../../middlewares");
 
 router.post("/signup", ctrl.signup);
 
+router.get("/verify/:verificationToken", ctrl.verify);
+
+router.post("/verify", ctrl.resendVerify);
+
 router.post("/login", ctrl.login);
 
 router.get("/current", authenticate, ctrl.getCurrent);
